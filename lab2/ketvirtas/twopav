@@ -1,0 +1,5 @@
+#!/bin/sh
+
+read varname
+eval value=\$$varname
+echo "$varname = $value" 

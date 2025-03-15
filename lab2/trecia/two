@@ -1,0 +1,6 @@
+cd
+if [ -d "/def" ]; then
+	cd /dev && pwd
+elif [ -d "/var/lib" ]; then
+	cd /var/lib && pwd
+fi

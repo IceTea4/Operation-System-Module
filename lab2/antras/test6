@@ -1,0 +1,2 @@
+val=$((2%10))
+echo "Galutinis rez : $val" 

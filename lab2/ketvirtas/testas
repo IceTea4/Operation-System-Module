@@ -1,0 +1,6 @@
+#!/bin/sh -u
+
+false
+echo $tokio_nera
+echo Pabaiga
+) klaida

@@ -1,0 +1,35 @@
+echo "Iveskite savaited dienos pavadinima skaiciumi arba tekstu:"
+read weekday
+
+if [[ "$weekday" =~ [qQ] ]]; then
+	echo "Baigti darba"
+	exit 0
+fi
+
+if [[ "$weekday" =~ [0-9] ]] && [ "$weekday" -ge 1 ] && [ "$weekday" -le 7 ]; then
+    case $weekday in
+        1) echo "Monday" ;;
+        2) echo "Tuesday" ;;
+        3) echo "Wednesday" ;;
+        4) echo "Thursday" ;;
+        5) echo "Friday" ;;
+        6) echo "Saturday" ;;
+        7) echo "Sunday" ;;
+    esac
+elif case $weekday in
+        pirmadienis|antradienis|treciadienis|ketvirtadienis|penktadienis|sestadienis|sekmadienis) true ;;
+        *) false ;;
+    esac; then
+    case $weekday in
+        pirmadienis) echo "Monday" ;;
+        antradienis) echo "Tuesday" ;;
+        treciadienis) echo "Wednesday" ;;
+        ketvirtadienis) echo "Thursday" ;;
+        penktadienis) echo "Friday" ;;
+        sestadienis) echo "Saturday" ;;
+        sekmadienis) echo "Sunday" ;;
+    esac
+else
+    echo "Gal jums reikia pagalbos? (Blogai ivesta reiksme)"
+    exit 1
+fi

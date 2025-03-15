@@ -1,0 +1,13 @@
+echo "Iveskite gimimo metus:"
+read s1
+echo "Iveskite gimimo menesi:"
+read s2
+echo "Iveskite gimimo diena:"
+read s3
+echo "Gimimo data: " $s1 "-" $s2 "-" $s3
+dalyba1=$((s1/s2))
+dalyba2=$((s1/s3))
+liekana1=$((s1%s2))
+liekana2=$((s1%s3))
+echo "Dalybos rezultatu suma: " $((dalyba1+dalyba2))
+echo "Liekanu sandauga: " $((liekana1*liekana2))

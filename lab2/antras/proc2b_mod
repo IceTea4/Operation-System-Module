@@ -1,0 +1,4 @@
+prisijungimoName=$(who am i | awk '{ print $1 }')
+userID=$(id -u)
+group=$(groups | awk '{ print $1 }')
+echo "Prisijungimo vardas: " $prisijungimoName "; Vartotojo numeris: " $userID "; Grupe: " $group

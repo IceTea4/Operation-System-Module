@@ -1,0 +1,2 @@
+for v; do echo $v; done
+for v in "$@"; do echo $v; done

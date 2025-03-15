@@ -1,0 +1,3 @@
+echo "Koks jusu vardas?"
+read PERSON
+echo "Sveiki, $PERSON"

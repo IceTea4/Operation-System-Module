@@ -1,0 +1,4 @@
+for v in 0 1 2 3 nulis vienas du trys "du simtai" 
+do
+   echo $v
+done

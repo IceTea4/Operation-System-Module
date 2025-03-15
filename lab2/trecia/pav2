@@ -1,0 +1,8 @@
+#!/bin/sh
+if grep nera_tokio /etc/passwd 
+then
+    echo "==== nera_tokio surastas faile   /etc/passwd" 
+    cat /etc/passwd
+else
+    echo "==== Nerastas nera_tokio faile /etc/passwd" 
+fi
