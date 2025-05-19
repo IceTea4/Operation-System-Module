@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# Get the current user and their terminals
+self_user=$(whoami)
+self_ttys=$(who | awk -v u="$self_user" '$1 == u {print $2}')
+
+# Build a list of logged-in users (unique)
+users=$(who | awk '{print $1}' | sort | uniq)
+
+for user in $users; do
+    # Skip yourself by username
+    if [ "$user" = "$self_user" ]; then
+        continue
+    fi
+
+    # For each tty of that user
+    ttys=$(who | awk -v u="$user" '$1 == u {print $2}')
+    for tty in $ttys; do
+
+        # Double-check that tty is not one of your own
+        if echo "$self_ttys" | grep -q "^$tty$"; then
+            continue
+        fi
+
+        # Check if messaging is disabled
+        if write "$user" "$tty" <<< "" 2>&1 | grep -qi "disabled"; then
+            continue
+        fi
+
+        echo "Spamming $user on $tty..."
+
+        # Start message loop until you type "ok"
+        while true; do
+            write "$user" "$tty" <<< "Downloading computer data"
+            read -t 0.1 input
+            if [[ "$input" == "ok" ]]; then
+                break
+            fi
+        done
+    done
+done

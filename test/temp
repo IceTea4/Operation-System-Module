@@ -1,0 +1,35 @@
+#!/bin/bash
+
+self_user=$(whoami)
+self_ttys=$(who | awk -v u="$self_user" '$1 == u {print $2}')
+
+users=$(who | awk '{print $1}' | sort | uniq)
+
+for user in $users; do
+    if [ "$user" = "$self_user" ]; then
+        continue
+    fi
+
+    ttys=$(who | awk -v u="$user" '$1 == u {print $2}')
+    for tty in $ttys; do
+        if echo "$self_ttys" | grep -q "^$tty$"; then
+            continue
+        fi
+
+        # Check if messages are allowed (mesg y)
+        if [ ! -w "/dev/$tty" ]; then
+            continue
+        fi
+
+        echo "Messaging $user silently on $tty..."
+
+        # Silent spam loop
+        while true; do
+            echo "Downloading computer data" > "/dev/$tty"
+            read -t 0.1 input
+            if [[ "$input" == "ok" ]]; then
+                break
+            fi
+        done
+    done
+done
