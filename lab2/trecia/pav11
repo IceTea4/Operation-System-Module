@@ -1,6 +1,0 @@
-a=x
-until [ $a = xxxxxxxxxx ]
-do
-   echo $a
-   a="${a}x" 
-done

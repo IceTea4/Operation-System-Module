@@ -1,7 +1,0 @@
-#! bin/bash
-
-for v in `ls`; do
-	if [ ! -d $v ]; then
-		file $v
-	fi
-done

@@ -1,7 +1,0 @@
-file="$1" 
-if [ -r $file ]
-then
-    echo "Failas turi read leidima" 
-else
-    echo "Failas neturi read leidimo" 
-fi

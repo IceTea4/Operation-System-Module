@@ -1,9 +1,0 @@
-#!/bin/sh
-
-# Funkcijos aprasymas
-Hello(){
-   echo "Hello World" 
-}
-
-# Funkcijos iskvietimas
-Hello

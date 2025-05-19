@@ -1,7 +1,0 @@
-read a
-read b
-if test -n "$a"; then 
-    if [ "$a" = "$b" ]; then
-        echo "Eilutės a ir b vienodos ir netuščios." 
-    fi
-fi

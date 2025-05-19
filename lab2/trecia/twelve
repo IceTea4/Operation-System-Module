@@ -1,9 +1,0 @@
-#! /bin/bash
-
-read nr
-c=0
-
-while [ $c -le $nr ]; do
-	echo $c
-	c=$(( $c + 1 ))
-done

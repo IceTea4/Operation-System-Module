@@ -1,5 +1,0 @@
-a=40
-b=6
-echo "Daugyba: " $((a*b))
-echo "Dalyba: " $((a/b))
-echo "Dalyba gaunant liekana: " $((a%b))

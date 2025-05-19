@@ -1,4 +1,0 @@
-grep "$1" /etc/passwd
-status=$?         # pabaigos kodas issaugomas kintamajame status            
-echo "grep programa iesko '$1' ir grazina koda $status"                   
-exit $status      # skriptas baigiamas tokiu paciu kodu, koki grazino grep
