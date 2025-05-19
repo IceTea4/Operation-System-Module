@@ -1,0 +1,11 @@
+#!/bin/sh
+#komandines eilutes argumentais tarnauja date komandos rezultatai
+set `date` 
+ echo 'Argumentai' $*  
+ echo    
+ echo 'Argumentas 1:' $1 
+ echo 'Argumentas 2:' $2 
+ echo 'Argumentas 3:' $3 
+ echo 'Argumentas 4:' $4 
+ echo    
+ echo $2 $3, $6  

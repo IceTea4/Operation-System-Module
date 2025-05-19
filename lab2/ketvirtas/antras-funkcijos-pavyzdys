@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Funkcijos aprasymas
+Hello () {
+   echo "Hello, $1 $2" 
+}
+
+# Funkcijos iskvietimas
+Hello Vardas Pavarde

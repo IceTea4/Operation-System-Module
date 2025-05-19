@@ -1,0 +1,33 @@
+#isrinkti vardai ir atspausdintas ju pasikartojimo skaicius
+awk '{ if ($5 != "") print $5 }' /data/ld/ld2/stud2001 | sort | uniq -c | sort
+
+#daugiausia uzklausu i serveri atsiuntusiu klientu IP
+awk '{ print $1 }' /data/ld/ld1/Solaris_access_log | sort | uniq -c | sort -r | head -10
+
+#daugiausiai duomenu nusiurbe is serverio IP
+awk '{sum[$1] += $NF} END { for (wrd in sum) print sum[wrd], wrd}' /data/ld/ld1/Solaris_access_log | sort -nr | head -10
+
+#populiariausi puslapiai
+awk -F'"' '{ print $2 }' /data/ld/ld1/Solaris_access_log | sort | uniq -c | sort -r
+
+#IP adresai tu kurie bande lauztis i serveri
+grep '"-"' /data/ld/ld1/Solaris_access_log | sort | awk '{ print $1 }' | uniq
+
+#populiariausi lauzimosi budai - skirtingi IP bet bande lauztis taip pat
+grep -o 'GET\|POST\|HEAD\|PUT\|DELETE\|PATCH\|OPTIONS\|CONNECT\|TRACE' /data/ld/ld1/Solaris_access_log | sort | uniq -c | sort -nr | head -3
+
+#pertvarkymas i lengviau zmogui skaitoma formata
+awk '{ gsub (/ /, ""); gsub (/:/, " "); print $0}' /data/ld/ld2/srautai.txt
+
+#sarasas marsrutizatoriu
+awk -f reform /data/ld/ld2/srautai.txt | awk '{ print $3 }' | sort | uniq
+
+#isejimo interfeicai
+isejimo interfeicai nezinau ??? awk -f reform /data/ld/ld2/srautai.txt | awk '{ print $4 }' | sort | uniq
+
+#per kuri marsrutizatoriu kiek duomenu
+awk -f reform /data/ld/ld2/srautai.txt | awk '{sum[$3] += $6} END { for (wrd in sum) print sum[wrd], wrd}' | sort -nr
+
+#su kuriais isejimo interfeisais suristas marsrut ???
+#strace1 ???
+#strace2 ???

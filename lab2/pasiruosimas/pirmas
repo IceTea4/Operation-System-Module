@@ -1,0 +1,60 @@
+#!/bin/sh
+
+if test $# -eq 0;
+then
+    	echo 1a. Netinkamas argumentu kiekis
+	exit 111
+elif [ ! -d $1 ];
+then
+    	echo 2b. Pirmas argumentas - turi buti egzistuojantis katalogas
+	exit 111
+elif [ $# -eq 1 ];
+then
+	echo 1c. Neivestas nei vienas login
+	exit 111
+else
+	echo 2. Argumentai poteikti teisingai
+	echo 3a. Katalogas: $1, jo savininkas: `ls -l | grep $1 | awk '{ print $3 }'`
+	dir=$1
+	shift
+	touch loginvardai
+	touch logins
+	touch existing
+	count=0
+	for i in $*;
+	do
+		if ! grep -q ^$i$ loginvardai;
+		then
+			echo $i >> loginvardai
+			awk -F : '{ print $1 }' /etc/passwd >> logins
+			if ! grep -q ^$i$ logins;
+			then
+				count=$(( count + 1 ))
+			else
+				echo $i >> existing
+			fi
+		fi
+	done
+	echo 3aa. Ivestu login vardu sarasas: $*
+	echo 3b. Skirtingu ivestu login kiekis: `awk '{ print NR }' loginvardai | tail -1`
+	echo 3c. Nesikartojantys ir neegzistuojantys loginai: $count
+	rm loginvardai
+	rm logins
+	touch temp
+	for i in `awk '{ print $0 }' existing`;
+	do
+		touch $i
+		echo 4ab. Failai priklausantys $i login vardui: > $i
+		ls -lR $dir | grep -v "^d" | awk '{ print $NF, $5, $3 }' >> temp
+		if grep -q " $i$" temp;
+		then
+			awk '{ print $1, $2 }' temp >> $i
+			sum=$( awk '{ sum += $2 } END { print sum }' temp )
+			echo Failu dydziu suma: $sum >> $i
+		else
+			echo Nera failu priklausanciu login vardui >> $i
+		fi
+	done
+	rm temp
+	rm existing
+fi

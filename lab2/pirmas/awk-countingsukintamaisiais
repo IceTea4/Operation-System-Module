@@ -1,0 +1,7 @@
+{ if ($3 == " 62. 40.103.217") { 
+	countPaketai++;
+	countBaitai += $6; 
+	}
+}
+END { print "Paketai:", countPaketai, " ; Baitai:", countBaitai;
+}

@@ -1,0 +1,7 @@
+#! /bin/bash
+
+if head -1 "$1" | grep "#!"; then
+	echo "failas yra vykdomasis"
+else
+	echo "Ne"
+fi

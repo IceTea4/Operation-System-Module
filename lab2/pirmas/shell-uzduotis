@@ -1,0 +1,2 @@
+ls / /neratokio > rezultatai 2>&1 | cksum
+#rezultatai i faila o klaidos perduodamos cksum komandai

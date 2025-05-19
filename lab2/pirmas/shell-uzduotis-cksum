@@ -1,0 +1,2 @@
+cksum failas1 failas2 failas3 | awk '{sum += $1} END {print sum}'
+#bendros kontrolines sumos skaiciavimas nekuriant laikino failo

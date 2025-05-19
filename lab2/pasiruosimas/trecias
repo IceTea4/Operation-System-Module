@@ -1,0 +1,64 @@
+#!/bin/sh
+
+Pletiniai(){
+	count=$( awk '{ print NR }' temp | tail -1 )
+}
+
+if [ $# -ge 1 ];
+then
+	if [ -d $1 ];
+	then
+		dir=$1
+		shift
+		if [ ! $# -eq 0 ];
+		then
+			echo 2. Argumentai pateikti teisingai
+
+			echo 3a. Katalogo vardas: $dir
+			touch temp
+			for i in $*;
+			do
+				if ! grep -q "^$i$" temp;
+				then
+					echo $i >> temp
+				fi
+			done
+			echo 3a. Skirtingi failu pletiniu pavad:
+			awk '{ print $0 }' temp
+			Pletiniai
+			echo 3b. Skirtingu pletiniu kiekis: $count
+			badcount=0
+			for i in `grep -v "^\." temp`;
+			do
+				badcount=$(( badcount + 1 ))
+			done
+			echo 3c. Nekorektisku pletiniu yra: $badcount
+			touch korektiski
+			grep "^\." temp > korektiski
+			rm temp
+			touch Rez.txt
+			for i in `awk '{ print $0 }' korektiski`;
+			do
+				ls -Rl $dir | grep "$i$" | awk '{ print $NF, $5 }' > Rez.txt
+			done
+			suma=$( awk '{ suma+=$2 } END { print suma }' Rez.txt )
+			echo 4c. Failu dydziu suma: $suma >> Rez.txt
+			if [ -d `whoami` ]
+			then
+				rm -r `whoami`
+			fi
+			mkdir `whoami`
+			mv Rez.txt `whoami`
+			rm korektiski
+		else
+			echo 1c. Neivestas nei vienas failo pletinys
+			exit 254
+		fi
+	else
+		echo 1b. Pirmas argumentas - turi buti egzsistuojantis katalogas
+		exit 254
+	fi
+else
+	echo 1a. Netinkamas argumentu kiekis
+	exit 254
+fi

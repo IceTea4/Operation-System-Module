@@ -1,0 +1,6 @@
+ps
+echo "-----------------"
+who
+echo "-----------------"
+ls
+#shell programa isveda skirtingus komandu rezultatus

@@ -1,0 +1,2 @@
+ls /usr/bin/?? | grep '[0-9]'
+#isrenka failus su dviem simboliais pavadinime ir kurie turi skaicius

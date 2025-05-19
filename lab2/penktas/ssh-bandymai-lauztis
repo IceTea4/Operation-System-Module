@@ -1,0 +1,7 @@
+awk '{
+	if ($9 == "Illegal")
+		print $NF
+	else if ($9 == "Failed" && $10 == "password")
+		print $(NF-3)
+}' /data/ld/ld2/studlog | sort | uniq -c | sort -nr
+

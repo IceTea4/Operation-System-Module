@@ -1,0 +1,25 @@
+#!/bin/sh
+
+first=$1
+second=$2
+count=$#
+
+if test $count -lt 2; then
+	echo "Per mazai argumentu"
+elif test $count -gt 2; then
+	echo "Per daug argumentu"
+else
+	if [ -e "$first" ] && [ -e "$second" ]; then
+		ownerFirst=$(ls -l $second | awk '{ print $3 }')
+		ownerSecond=$(ls -l $first | awk '{ print $3}')
+		
+		if [ "$ownerFirst" = "$ownerSecond" ]; then
+			echo "Nurodyti failai turi ta pati savininka"
+		else
+			echo "Failai turi skirtingus savininkus"
+			exit 1
+		fi
+	else
+		echo "Vienas arba abu failai neegzistuoja"
+	fi
+fi

@@ -1,0 +1,36 @@
+#!/bin/bash
+
+dir=$(pwd)
+
+process_directory() {
+	local current_dir="$1"
+	local index_file="$current_dir/index.txt"
+	local temp_index="$current_dir/tempindex.txt"
+
+	touch "$index_file"
+	> "$temp_index"
+
+	for i in "$current_dir"/*; do
+		if test -d $i; then
+			process_directory "$i"
+		elif [[ $(basename "$i") != "tempindex.txt" ]]; then
+			filename=$(basename "$i")
+
+			if ! grep -q "^$filename/" "$index_file"; then
+				echo "$filename failo aprasymas:"
+				read aprasymas
+				echo "$filename/$aprasymas" >> "$temp_index"
+			else
+				grep "^filename/" "$index_file" >> "$temp_index"
+			fi
+		fi
+	done
+
+	if [ -s "$temp_index" ]; then
+	        mv "$temp_index" "$index_file"
+   	else
+        	rm -f "$temp_index"
+    	fi
+}
+
+process_directory "$dir"

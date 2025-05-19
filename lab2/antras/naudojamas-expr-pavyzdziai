@@ -1,0 +1,7 @@
+#!/bin/sh
+
+c=`expr 2 + 2`
+d=`expr 2+2`
+echo $c + 2
+echo $d + 2
+echo $c $d

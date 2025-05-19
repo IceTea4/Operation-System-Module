@@ -1,0 +1,2 @@
+grep -v '\<IF 9/1\>' /data/ld/ld2/stud2001
+#ieskos tik tokiu eiluciu kurios atitinka seka
