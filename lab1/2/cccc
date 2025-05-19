@@ -1,0 +1,190 @@
+accessdb
+addgnupghome
+addpart
+anacron
+applygnupgdefaults
+archive-conf
+atd
+atrun
+backup.sh
+backup-tar
+build-docbook-catalog
+cgclear
+cgconfigparser
+cgrulesengd
+chgpasswd
+chpasswd
+convertquota
+crond
+delpart
+dispatch-conf
+dump-remind
+e2freefrag
+e4crypt
+e4defrag
+edquota
+emaint
+env-update
+escapesrc
+etc-update
+filefrag
+fixpackages
+genccode
+gencmn
+gennorm2
+gensprep
+groupadd
+groupdel
+groupmems
+groupmod
+grpck
+grpconv
+grpunconv
+haveged
+iconvconfig
+icupkg
+iftop
+in.talkd
+in.telnetd
+ipset
+ldattach
+locale-gen
+logoutd
+migrate-pax
+mklost+found
+newusers
+ngircd
+nullmailer-queue
+nullmailer-send
+oidentd
+partx
+paxctl-ng
+paxmark.sh
+perl-cleaner
+pwck
+pwconv
+pwunconv
+pypaxctl
+quotacheck
+quotaoff
+quotaon
+quotastats
+readprofile
+regenworld
+repquota
+resizepart
+restore-tar
+revdep-pax
+rfkill
+rmt
+rtcwake
+run-crons
+savelog
+sendmail
+setquota
+sshd
+sudo_logsrvd
+sudo_sendlog
+sysctl
+syslog-ng
+syslog-ng-ctl
+syslog-ng-debun
+talkd
+tcpdump
+update-ca-certificates
+useradd
+userdel
+usermod
+utempter
+uuidd
+vigr
+vipw
+visudo
+warnquota
+xinetd
+xqmstats
+zabbix_agent2
+zabbix_agentd
+	a bit - truputi
+	a few - keli
+	a lot - daug
+	abandoned - apleistas
+	abase - zeminti
+	abash - sugedinti
+	abbreviate - trumpinti
+	abbreviation - santrumpa
+	abdicate - atsisakyti 
+	abduction - pagrobimas
+	ability - geba
+	abject - nusizemines, apgailetinas
+	ablaze - liepsnoti
+	able - galintis
+	abnormal - nenormalus
+	aborigine - aborigenas
+	abort - nutraukti
+	about - apie
+	about how - apie, kaip 
+	above - virs
+	above-board  - saziningai
+	above-named  - auksciau minetas
+	abracadabra - burtazodis
+	abrasion - nutrynimas
+	abroad - uzsienyje
+	absence - nebuvimas
+	absolute - absoliutus
+	absolute address -  absoliutusis adresas
+	absorb - sugerti
+	abnormal termination -  avarine baigtis
+	academy - akademija
+	accept - priimti
+	access authorization -  prieigos sankcionavimas
+	access control list -  prieigos teisiu sarasas
+	access control -  prieigos kontrole
+	access right(s) -  prieigos teise
+	access time -  kreipties trukme
+	accessory -  (nusikaltimo) bendrininkas, dalyvis, reikmenys
+	accuracy - tikslumas, punktualumas
+	acknowledge - pripazinti,patvirtinti gavima
+	across - skersai
+	act - veikti
+	ad hoc - lot. specialus, siam tikslui 
+	addition - pridejimas, priedas, papildymas
+	address bus -  adresu magistrale
+	address mapping table -  adresu atitikmenu lentele
+	address mask -  adreso kauke
+	alert window -  ispejimo langas
+ 	alert -  ispejimas
+	alias -  alternatyvusis vardas
+	allocation -  isdestymas
+	anonymous logon -  anoniminis prisijungimas
+	append -  papildyti
+	application programmer -  taikomuju programu programuotojas
+ 	application programming interface -  programu sasaja
+ 	application sharing -  programu bendrinimas
+ 	application software  [taikomoji] programine iranga
+	apply filter -  filtruoti
+	apply -  (pri)taikyti
+	approach -  metodas
+	approve -  patvirtinti
+	approximate value -  apytiksle reiksme
+	area -  sritis
+	argument separator -  argumentu skirtukas
+	argument -  argumentas
+ 	arithmetic constant -  skaitine konstanta
+	arithmetic data -  aritmetiniai duomenys
+ 	arithmetic expression -  aritmetinis reiskinys
+ 	arithmetic logic unit, ALU -  aritmetinis-loginis itaisas
+ 	arithmetic operation -  aritmetine operacija
+	assembly language coding -  programavimas asemblerio kalba
+	assembly language	 asemblerio kalba, asembleris
+ 	assembly-control statement -  asemblerio direktyva
+	assertion -  teiginys
+	assessment -  ivertinimas
+	assign - paskirti
+	assistance -  pagalba
+	assistant-  pagelbiklis
+ 	associate -  susieti
+ 	associated view -  susietasis rodinys
+	associative memory -  asociatyvioji atmintis
+	associative operation -  asociatyvioji operacija
+	associative search -  asociatyvioji paieska
